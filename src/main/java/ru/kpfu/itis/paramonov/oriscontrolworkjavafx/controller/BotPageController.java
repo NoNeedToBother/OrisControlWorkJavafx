@@ -174,14 +174,33 @@ public class BotPageController {
 
         Double difference = maxValue - minValue;
 
-        String message = "∎";
+        String message = "";
+
+        int[] columnValues = new int[7];
+        int counter = 0;
         for (Double value : values) {
             Double diff = value - minValue;
+            columnValues[counter] = (int) (diff * 10);
+            counter++;
+            /*
             for (int i = 0; i < diff * 10; i++) {
                 message += "∎";
+            }*/
+            //appendMessage(message + " " + value, ENTITY_SYSTEM);
+            //message = "";
+        }
+        int columnMax = -1;
+        for (int columnValue : columnValues) {
+            if (columnValue > columnMax) columnMax = columnValue;
+        }
+
+        for (int i = columnMax; i > 0; i--) {
+            message = "";
+            for (int columnValue : columnValues) {
+                if (columnValue >= i) message += "∎";
+                else message += " ";
             }
-            appendMessage(message + " " + value, ENTITY_SYSTEM);
-            message = "∎";
+            appendMessage(message, ENTITY_SYSTEM);
         }
     }
 
