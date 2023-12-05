@@ -11,6 +11,7 @@ import org.json.JSONObject;
 import ru.kpfu.itis.paramonov.oriscontrolworkjavafx.BotApplication;
 import ru.kpfu.itis.paramonov.oriscontrolworkjavafx.chat.ChatApplication;
 import ru.kpfu.itis.paramonov.oriscontrolworkjavafx.chat.server.ChatServer;
+import ru.kpfu.itis.paramonov.oriscontrolworkjavafx.game.GameApplication;
 import ru.kpfu.itis.paramonov.oriscontrolworkjavafx.http_client.HttpClient;
 import ru.kpfu.itis.paramonov.oriscontrolworkjavafx.http_client.HttpClientImpl;
 import ru.kpfu.itis.paramonov.oriscontrolworkjavafx.model.Command;
@@ -156,6 +157,11 @@ public class BotPageController {
                         case chat -> {
                             ChatApplication chat = new ChatApplication();
                             chat.start(BotApplication.getPrimaryStage());
+                        }
+
+                        case game -> {
+                            GameApplication game = new GameApplication();
+                            game.start(BotApplication.getPrimaryStage());
                         }
                     }
                 }

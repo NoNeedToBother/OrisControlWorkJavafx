@@ -10,4 +10,8 @@ module ru.kpfu.itis.paramonov.oriscontrolworkjavafx {
 
     exports ru.kpfu.itis.paramonov.oriscontrolworkjavafx.controller to javafx.fxml;
     exports ru.kpfu.itis.paramonov.oriscontrolworkjavafx to javafx.graphics;
+
+    opens ru.kpfu.itis.paramonov.oriscontrolworkjavafx.game.controller to javafx.fxml;
+    exports ru.kpfu.itis.paramonov.oriscontrolworkjavafx.game.controller to javafx.fxml;
+    exports ru.kpfu.itis.paramonov.oriscontrolworkjavafx.game to javafx.graphics;
 }
